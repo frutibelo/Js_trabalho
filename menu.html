@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Evellyn Izadora, Isabella Kochan, Jaine Schweig">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alguma Coisa</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="#default" class="logo"></a>
+        <div class="header-right">
+            <a href="menu.html">Menu</a>
+            <a class="active" href="cadastro.html">Cadastre-se</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Minha Loja Online</h1>
+
+        <div id="cart">
+            <h2>Carrinho de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p id="total">Total: R$ 0,00</p>
+            <button onclick="checkout()">Finalizar Compra</button>
+        </div>
+
+        <div id="products">
+            <h2>Produtos Disponíveis</h2>
+            <div class="col-6">
+                <div class="product" data-name="Produto 1" data-price="50.00">
+                    <img src="img/coreia-comida.jpg" alt="" width="200">
+                    <p>Produto 1 - R$50,00 </p>
+                    <input type="number" min="1" value="1" id="quantity1">
+                    <button onclick="addToCart('Produto 1', 50.00, 'quantity1')">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="product" data-name="Produto 2" data-price="30.00">
+                    <img src="img/coreia-comida.jpg" alt="" width="200">
+                    <p>Produto 2 - R$30,00 </p>
+                    <input type="number" min="1" value="1" id="quantity2">
+                    <button onclick="addToCart('Produto 2', 30.00, 'quantity2')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="product" data-name="Produto 1" data-price="50.00">
+                    <img src="img/coreia-comida.jpg" alt="" width="200">
+                    <p>Produto 1 - R$50,00 </p>
+                    <input type="number" min="1" value="1" id="quantity1">
+                    <button onclick="addToCart('Produto 1', 50.00, 'quantity1')">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="product" data-name="Produto 2" data-price="30.00">
+                    <img src="img/coreia-comida.jpg" alt="" width="200">
+                    <p>Produto 2 - R$30,00 </p>
+                    <input type="number" min="1" value="1" id="quantity2">
+                    <button onclick="addToCart('Produto 2', 30.00, 'quantity2')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

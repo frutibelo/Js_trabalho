@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Evellyn Izadora, Isabella Kochan, Jaine Schweig">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alguma Coisa</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="header">
+            <a href="#default" class="logo"></a>
+            <div class="header-right">
+                <a href="menu.html">Menu</a>
+                <a class="active" href="cadastro.html">Cadastre-se</a>
+                
+            </div>
+    </div>
+    
+    <section class="container">
+        <form name="inscricao">
+            <fieldset>
+                <legend>Cadastre-se</legend>
+                <div class="input-container">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required autofocus>
+                </div>
+                <div class="input-container">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="input-container">
+                    <label for="text">CPF</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="\d{3}.\d{3}.\d{3}-\d{2}"
+                        required>
+                </div>
+                <div class="input-container">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" name="cep" placeholder="CEP" pattern="[0-9]{5}-[0-9]{3}" required>
+                </div>
+                <div class="input-container">
+                    <label for="number">Telefone</label>
+                    <input type="number" name="telefone" id="telefone" placeholder="Telefone" pattern="\d{2}\d{2}\d{5}\d{4}"
+                        required>
+                </div>
+                <div class="actions">
+                    <button type="submit" onclick=" ">Cadastre-se</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</main>
+</body>
