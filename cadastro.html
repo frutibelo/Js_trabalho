@@ -1,4 +1,4 @@
-<!DOtml CTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -14,12 +14,11 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const total = urlParams.get('total');
-        const quantity = urlParams.get('quantity');
-        
-        // Exemplo de uso dos valores recebidos
+        const quantity = urlParams.get('quantity');      
         console.log('Total:', total);
         console.log('Quantidade:', quantity);
     </script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,7 @@
     </div>
     
     <section class="container">
-        <form name="inscricao">
+         <form name="inscricao" onsubmit="mostrarResumo(); return false;">
             <fieldset>
                 <legend>Cadastre-se</legend>
                 <div class="input-container">
@@ -59,12 +58,23 @@
                         required>
                 </div>
                 
-                <div class="actions">
-                    <button type="submit" onclick=" ">Cadastre-se</button>
-                    <button type="reset">Limpar</button>
-                </div>
+                
+                   
+                        <!-- Seu código do formulário aqui -->
+            
+                        <div class="actions">
+                            <button type="submit">Cadastrar</button>
+                            <button type="reset">Limpar</button>
+                        </div>
+                    
+            
+                   
+                
             </fieldset>
         </form>
+         <!-- Container para exibir resumo -->
+                    <div id="resumo-container"></div>
     </section>
 </main>
+
 </body>
