@@ -32,7 +32,7 @@
     </div>
 
     <section class="container">
-        <form name="inscricao" onsubmit="mostrarResumo(); return false;">
+        <form name="inscricao" action="https://app.headlessforms.cloud/api/v1/form-submission/UF7YAmmfN8" method="POST">
             <fieldset>
                 <legend>Cadastre-se</legend>
                 <div class="input-container">
@@ -56,6 +56,8 @@
                     <input type="number" name="telefone" id="telefone" placeholder="Telefone"
                         pattern="\d{2}\d{2}\d{5}\d{4}" required>
                 </div>
+
+                <textarea name="" id="idtexto" cols="30" rows="10"></textarea>
 
                 <button type="submit" onsubmit="validar()" >Cadastrar</button>
                 <button type="reset">Limpar</button>
