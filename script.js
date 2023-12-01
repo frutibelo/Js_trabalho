@@ -68,7 +68,7 @@ function validar() {
 
     var texto = "Nome: " + Nome + ", E-mail " + Email + ", CPF: " + Cpf + ", CEP: " + Cep + ", Telefone: " + Telefone + "." + "Produtos adquiridos:" + listaCarrinho[0] + " Preço total: " + total[0]
     
-    alert(texto)
+    window.alert(texto)
     document.getElementById("idtexto").innerHTML = texto
     console.log(texto)
 }
