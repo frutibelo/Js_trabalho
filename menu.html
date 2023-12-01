@@ -7,15 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="Evellyn Izadora, Isabella Kochan, Jaine Schweig">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porksuey</title>
-    <link rel="icon" type="image/x-icon" href="">
+    <title>The Hot Pot</title>
+    <link rel="icon" type="image/x-icon" href="img/Hotpot+Fire+Logo.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 
 <body>
     <div class="header">
-        <a href="index.html" class="logo"></a>
+        <a href="index.html" class="logo"><img src="img/Hotpot+Fire+Logo.png" alt="The Hot Pot Logo" width="70"></a>
         <div class="header-right">
             <a href="menu.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             <a class="active" href="cadastro.html">Cadastre-se</a>
@@ -24,59 +24,59 @@
 
 
     <div class="container">
-        <h1>Restaurante Porksuey</h1>
+        <h1>Restaurante The Hot Pot</h1>
 
-        <div id="cart">
+        <div id="carrrinho">
             <h2>Carrinho de Compras</h2>
-            <ul id="cart-items"></ul>
+            <ul id="lista-carrinho"></ul>
             <p id="total">Total: R$ 0,00</p>
-            <button onclick="checkout()">Finalizar Compra</button>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
         </div>
 
-        <div id="products">
+        <div id="produtos">
             <h2>Produtos Disponíveis</h2>
             <div class="col-6">
-                <div class="product" data-name="Kimchi" data-price="37.00">
-                    <img src="img/kimchi.jpeg" alt="" >
+                <div class="produto" data-name="Kimchi" data-price="37.00">
+                    <img src="img/kimchi.jpeg" alt="kimchi" >
                     <p>Kimchi - R$37,00 </p>
-                    <input type="number" min="1" value="1" id="quantity1">
-                    <button onclick="addToCart('Kimchi', 27.00, 'quantity1')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade1">
+                    <button onclick="addCarrinho('Kimchi', 27.00, 'quantidade1')">Adicionar ao Carrinho</button>
                 </div>
 
-                <div class="product" data-name="Bulgogi" data-price="38.00">
-                    <img src="img/bulgogi.jpeg" alt="" >
+                <div class="produto" data-name="Bulgogi" data-price="38.00">
+                    <img src="img/bulgogi.jpeg" alt="bulgogi" >
                     <p>Bulgogi - R$38,00 </p>
-                    <input type="number" min="1" value="1" id="quantity2">
-                    <button onclick="addToCart('Bulgogi', 38.00, 'quantity2')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade2">
+                    <button onclick="addCarrinho('Bulgogi', 38.00, 'quantidade2')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="product" data-name="Hongeo-hoe" data-price="35.50">
-                    <img src="img/hongeo-hoe.jpeg" alt="" >
+                <div class="produto" data-name="Hongeo-hoe" data-price="35.50">
+                    <img src="img/hongeo-hoe.jpeg" alt="hongeo-hoe" >
                     <p>Hongeo-hoe - R$35,50 </p>
-                    <input type="number" min="1" value="1" id="quantity3">
-                    <button onclick="addToCart('Hongeo-hoe', 35.50, 'quantity1')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade3">
+                    <button onclick="addCarrinho('Hongeo-hoe', 35.50, 'quantidade3')">Adicionar ao Carrinho</button>
                 </div>
 
                
             </div>
             <div class="col-6">
-                <div class="product" data-name="Tteokbokki" data-price="20.00">
-                    <img src="img/tteokbokki.jpeg" alt="" >
+                <div class="produto" data-name="Tteokbokki" data-price="20.00">
+                    <img src="img/tteokbokki.jpeg" alt="tteokbokki" >
                     <p>Tteokbokki - R$20,00 </p>
-                    <input type="number" min="1" value="1" id="quantity4">
-                    <button onclick="addToCart('Tteokbokki', 20.00, 'quantity1')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade4">
+                    <button onclick="addCarrinho('Tteokbokki', 20.00, 'quantidade4')">Adicionar ao Carrinho</button>
                 </div>
 
-                <div class="product" data-name="Kkotgetang" data-price="46.00">
-                    <img src="img/kkotgetang.jpeg" alt="" >
+                <div class="produto" data-name="Kkotgetang" data-price="46.00">
+                    <img src="img/kkotgetang.jpeg" alt="kkotgetang" >
                     <p>Kkotgetang - R$46,00 </p>
-                    <input type="number" min="1" value="1" id="quantity5">
-                    <button onclick="addToCart('Kkotgetang', 46.00, 'quantity2')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade5">
+                    <button onclick="addCarrinho('Kkotgetang', 46.00, 'quantidade5')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="product" data-name="Produto 3" data-price="48.00">
-                    <img src="img/haejang-guk.jpeg" alt="" >
+                <div class="produto" data-name="Haejang-guk" data-price="48.00">
+                    <img src="img/haejang-guk.jpeg" alt="haejang-guk" >
                     <p>Haejang-guk - R$48,00 </p>
-                    <input type="number" min="1" value="1" id="quantity6">
-                    <button onclick="addToCart('Haejang-guk', 48.00, 'quantity1')">Adicionar ao Carrinho</button>
+                    <input type="number" min="1" value="1" id="quantidade6">
+                    <button onclick="addCarrinho('Haejang-guk', 48.00, 'quantidade6')">Adicionar ao Carrinho</button>
                 </div>
 
                 

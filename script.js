@@ -1,96 +1,60 @@
 
-let cart = [];
+// Adiciona um produto ao carrinho
+function addCarrinho(nomeProduto, preco, idquantidade) {
+    const quantidade = parseInt(document.getElementById(idquantidade).value);
+    const total = preco * quantidade;
 
-function addToCart(productName, price, quantityId) {
-    const quantity = parseInt(document.getElementById(quantityId).value);
-    const total = price * quantity;
+    const item = { nome: nomeProduto, preco, quantidade, total };
 
-    const item = {
-        name: productName,
-        price: price,
-        quantity: quantity,
-        total: total
-    };
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push(item);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    updateCart();
+    atualizarCarrinho();
 }
 
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    const totalElement = document.getElementById('total');
+// Atualiza o conteúdo do carrinho na interface
+function atualizarCarrinho() {
+    const listaCarrinho = document.getElementById('lista-carrinho');
+    const elementoTotal = document.getElementById('total');
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     let total = 0;
 
-    cartItems.innerHTML = '';
+    listaCarrinho.innerHTML = '';
 
-    cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${item.name} x${item.quantity} - R$ ${item.total.toFixed(2)}`;
-        cartItems.appendChild(listItem);
+    carrinho.forEach(item => {
+        const elementoLista = document.createElement('li');
+        elementoLista.textContent = `${item.nome} x${item.quantidade} - R$ ${item.total.toFixed(2)}`;
+        listaCarrinho.appendChild(elementoLista);
 
         total += item.total;
     });
 
-    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+    elementoTotal.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
 
-function checkout() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Finaliza a compra e redireciona para a página de cadastro
+function finalizarCompra() {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    if (cart.length > 0) {
+    if (carrinho.length > 0) {
         let total = 0;
-        let quantity = 0;
+        let quantidade = 0;
 
-        for (const item of cart) {
+        for (const item of carrinho) {
             total += item.total;
-            quantity += item.quantity;
+            quantidade += item.quantidade;
         }
 
+        window.location.href = `cadastro.html?total=${total.toFixed(2)}&quantidade=${quantidade}`;
 
-        window.location.href = `cadastro.html?total=${total.toFixed(2)}&quantity=${quantity}`;
-
-        alert('Compra realizada com sucesso! Total: R$ ' + total.toFixed(2));
-        cart = [];
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCart();
+        alert('Total: R$ ' + total.toFixed(2));
+        carrinho = [];
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        atualizarCarrinho();
     } else {
         alert('Adicione produtos ao carrinho antes de finalizar a compra.');
     }
 }
 
-function mostrarResumo() {
-    // Obtém os valores do formulário
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const cpf = document.getElementById('cpf').value;
-    const cep = document.getElementById('cep').value;
-    const telefone = document.getElementById('telefone').value;
-
-    // Obtém os valores do carrinho
-    const urlParams = new URLSearchParams(window.location.search);
-    const total = urlParams.get('total');
-    const quantity = urlParams.get('quantity');
-
-    // Exibe as informações abaixo do formulário
-    const resumoContainer = document.getElementById('resumo-container');
-    resumoContainer.innerHTML = `
-        <h2>Resumo do Cadastro</h2>
-        <p><strong>Nome:</strong> ${nome}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>CPF:</strong> ${cpf}</p>
-        <p><strong>CEP:</strong> ${cep}</p>
-        <p><strong>Telefone:</strong> ${telefone}</p>
-
-        <h2>Resumo da Compra</h2>
-        <p><strong>Total de Itens:</strong> ${quantity}</p>
-        <p><strong>Total da Compra:</strong> R$ ${total}</p>
-    `;
-
-    // Exibe mensagem de confirmação
-    alert('Cadastro realizado com sucesso!');
-}

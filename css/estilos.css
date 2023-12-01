@@ -35,6 +35,11 @@ body {
     color: white;
 }
 
+.header a.active:hover {
+    background-color: #751700;
+    color: white;
+}
+
 .header-right {
     float: right;
 }
@@ -95,14 +100,14 @@ h1, h2 {
     color: #333;
 }
 
-#cart {
+#carrinho {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 20px;
     
 }
 
-#products {
+#produtos {
     border: 1px solid #ccc;
     padding: 10px;
     padding-bottom: 740px;
@@ -110,7 +115,7 @@ h1, h2 {
     
 }
 
-.product {
+.produto {
     margin-bottom: 10px;
     
 }
@@ -177,7 +182,7 @@ form {
     text-decoration: none;
   }
 
-.product img{
+.produto img{
     border-radius: 4px;
     width: 200px;
     height: 150px;
@@ -213,7 +218,7 @@ p {
 .restaurant-info {
     display: flex;
     margin-top: 20px;
-    padding: 76px;
+    padding: 39px;
 }
 
 .info-block {
