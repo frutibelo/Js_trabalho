@@ -58,7 +58,3 @@ function finalizarCompra() {
     }
 }
 
-//Enviar o e-mail com o texto com as informações
-function validar() {  
-    alert('Compra Finalizada');
-}
