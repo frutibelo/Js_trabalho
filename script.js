@@ -1,3 +1,4 @@
+
 let cart = [];
 
 function addToCart(productName, price, quantityId) {
@@ -93,4 +94,3 @@ function mostrarResumo() {
     // Exibe mensagem de confirmação
     alert('Cadastro realizado com sucesso!');
 }
-
