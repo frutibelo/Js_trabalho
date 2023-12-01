@@ -58,3 +58,15 @@ function finalizarCompra() {
     }
 }
 
+//Enviar o e-mail com o texto com as informações
+function validar() {  
+    var Nome = document.getElementById("nome").value
+    var Email = document.getElementById("email").value
+    var Cpf = document.getElementById("cpf").value
+    var Cep = document.getElementById("cep").value
+    var Telefone = document.getElementById("telefone").value
+
+    var texto = "Nome: " + Nome + ", E-mail " + Email + ", CPF: " + Cpf + ", CEP: " + Cep + ", Telefone: " + Telefone + "." + "Produtos adquiridos:" + listaCarrinho[0] + " Preço total: " + total[0]
+    
+    console.log(texto)
+}

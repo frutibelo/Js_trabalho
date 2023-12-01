@@ -14,7 +14,7 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const total = urlParams.get('total');
-        const quantity = urlParams.get('quantity');      
+        const quantity = urlParams.get('quantity');
         console.log('Total:', total);
         console.log('Quantidade:', quantity);
     </script>
@@ -23,16 +23,16 @@
 
 <body>
     <div class="header">
-            <a href="index.html" class="logo"><img src="img/Hotpot+Fire+Logo.png" alt="The Hot Pot Logo" width="70"></a>
-            <div class="header-right">
-                <a href="menu.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                <a class="active" href="cadastro.html">Cadastre-se</a>
-                
-            </div>
+        <a href="index.html" class="logo"><img src="img/Hotpot+Fire+Logo.png" alt="The Hot Pot Logo" width="70"></a>
+        <div class="header-right">
+            <a href="menu.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <a class="active" href="cadastro.html">Cadastre-se</a>
+
+        </div>
     </div>
-    
+
     <section class="container">
-         <form name="inscricao" onsubmit="mostrarResumo(); return false;">
+        <form name="inscricao" onsubmit="mostrarResumo(); return false;">
             <fieldset>
                 <legend>Cadastre-se</legend>
                 <div class="input-container">
@@ -45,8 +45,7 @@
                 </div>
                 <div class="input-container">
                     <label for="text">CPF</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="\d{3}.\d{3}.\d{3}-\d{2}"
-                        required>
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="\d{3}.\d{3}.\d{3}-\d{2}" required>
                 </div>
                 <div class="input-container">
                     <label for="cep">CEP</label>
@@ -54,27 +53,18 @@
                 </div>
                 <div class="input-container">
                     <label for="number">Telefone</label>
-                    <input type="number" name="telefone" id="telefone" placeholder="Telefone" pattern="\d{2}\d{2}\d{5}\d{4}"
-                        required>
+                    <input type="number" name="telefone" id="telefone" placeholder="Telefone"
+                        pattern="\d{2}\d{2}\d{5}\d{4}" required>
                 </div>
-                
-                
-                   
-                
-            
-                        <div class="actions">
-                            <button type="submit">Cadastrar</button>
-                            <button type="reset">Limpar</button>
-                        </div>
-                    
-            
-                   
-                
+
+                <button type="submit" onsubmit="validar()" >Cadastrar</button>
+                <button type="reset">Limpar</button>
+
             </fieldset>
         </form>
-         
+
     </section>
-</main>
+    </main>
 
 
 
